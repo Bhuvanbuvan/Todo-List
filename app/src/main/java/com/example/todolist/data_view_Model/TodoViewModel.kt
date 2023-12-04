@@ -22,6 +22,10 @@ class TodoViewModel(private val repository: Repository):ViewModel(),Observable {
     val saveOrUpdatetext=MutableLiveData<String?>()
     @Bindable
     val cancelOrDeletetext=MutableLiveData<String?>()
+    init {
+        saveOrUpdatetext.value="Save"
+        cancelOrDeletetext.value="Cancel"
+    }
 
     fun push(){
         if (isupdateordelete){
